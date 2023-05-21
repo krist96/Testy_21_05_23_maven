@@ -33,4 +33,12 @@ public class Automat {
                                 obiekt.ilosc);
         }
     }
+
+    public List<Produkt> getProdukty() {
+        return produkty;
+    }
+
+    public List<Tranzakcja> getTranzakcja() {
+        return tranzakcja;
+    }
 }
