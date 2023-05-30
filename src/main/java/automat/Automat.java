@@ -14,12 +14,35 @@ public class Automat {
     }
 
     private boolean czyIstniejeTakiNumer(int numerProdoktu) {
+        System.out.println(podajNajnizszyWolnyNumerProduktu());
         boolean exist = true;
         for(Produkt obiekt: this.produkty){
             if(obiekt.numerProdoktu == numerProdoktu)
                 exist = false;
         }
         return exist;
+    }
+
+    private int podajNajnizszyWolnyNumerProduktu() {
+        int wynik = 1;
+        boolean powtorz = true;
+
+        while (powtorz) {
+            powtorz = false;
+
+            for (Produkt produkt : this.produkty) {
+                if (produkt.numerProdoktu == wynik) {
+                    powtorz = true;
+                    break;
+                }
+            }
+
+            if (powtorz) {
+                wynik++;
+            }
+        }
+
+        return wynik;
     }
 
     public void setTranzakcja(List<Tranzakcja> tranzakcja) {
